@@ -6,7 +6,13 @@
 
 body {
     background-color: #ffc6ff;
-    overflow: hidden;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: spa; */
+    /* flex-wrap: wrap; */
+    /* gap: 10vh; */
 }
 
 .titulo {
@@ -16,7 +22,7 @@ body {
 h1,
 h2 {
     color: #6b2f69;
-    font-size: 60px;
+    font-size: 10vw;
 }
 
 h2 {
@@ -37,10 +43,8 @@ h2 {
     flex-wrap: wrap;
     gap: 25px;
 
-    position: relative;
-    top: 40vh;
 
-    transform: translate(0%, -60%);
+    /* transform: translate(0%, -60%); */
 
     scale: .8;
 
@@ -218,7 +222,7 @@ button:hover .button-text {
 @media screen and (max-width: 1200px) {
     .container {
 scale: 1;
-transform: translate(0%, -50%);
+/* transform: translate(0%, -50%); */
     }
   }
 @media screen and (max-width: 650px) {
