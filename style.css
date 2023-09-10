@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat Subrayada', sans-serif;
+}
+
+body {
+    background-color: #ffc6ff;
+    overflow: hidden;
+}
+
+.titulo {
+    text-align: center;
+}
+
+h1,
+h2 {
+    color: #6b2f69;
+    font-size: 60px;
+}
+
+h2 {
+    color: white;
+}
+
+.container {
+    background-color: #daa0d9;
+    padding: 30px;
+    margin: auto;
+    width: 60vw;
+    border-radius: 4vw;
+    /* height: 500px; */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    position: relative;
+    top: 40vh;
+
+    transform: translate(0%, -60%);
+
+    scale: .8;
+
+    /* justify-content: center; */
+    /* flex-direction: row; */
+    /* align-items: center; */
+    /* height: 100vh; */
+}
+
+.card {
+    height: 12vw;
+    width: 12vw;
+}
+
+#cell {
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: all .8s;
+}
+
+.face {
+    width: 12vw;
+    height: 12vw;
+    border-radius: 3vw;
+
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: translate(-50%,-50%); */
+
+    font-size: 6vw;
+
+    transition: outline .1s;
+    outline: 0px dashed #6b2f69;
+}
+
+.face:hover {
+    outline: 4px dashed #6b2f69;
+}
+
+#front {
+    color: #ffd3ff;
+    background-color: #b57bb4;
+    transform: rotateY(180deg);
+}
+
+#back {
+    color: #6b2f69;
+    background-color: #90558e;
+}
+
+.flip {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.win {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(0px);
+    position: absolute;
+    top: 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    visibility: hidden;
+    user-select: none;
+    transition: .9s all;
+}
+
+.winview {
+    background-color: rgba(0, 0, 0, 0.438);
+    backdrop-filter: blur(15px);
+    visibility:visible;
+    user-select:auto;
+
+}
+
+
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+button.learn-more {
+    width: 12rem;
+    height: auto;
+}
+
+button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #e100ff;
+    border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #e100ff;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+button:hover .circle {
+    width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+    color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+scale: 1;
+transform: translate(0%, -50%);
+    }
+  }
+@media screen and (max-width: 650px) {
+    .face,.card {
+      width: 15vw;
+      height: 15vw;
+    }
+  }
